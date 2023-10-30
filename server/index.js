@@ -1,7 +1,7 @@
 const express=require("express");
 
 const app=express();
-const fileUpload =require("express-fileupload");
+// const fileUpload =require("express-fileupload");
 const database=require("./config/database");
 const {cloudinaryConnect}=require("./config/cloudinary")
 const dotenv=require("dotenv");
@@ -24,12 +24,12 @@ app.use(
     })
 )
 
-app.use(
-    fileUpload({
-        useTempFiles:true,
-        tempFileDir:"/tmp"
-    })
-)
+// app.use(
+//     fileUpload({
+//         useTempFiles:true,
+//         tempFileDir:"/tmp"
+//     })
+// )
 
 //cloudinary connection
 
