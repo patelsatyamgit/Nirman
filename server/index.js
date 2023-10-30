@@ -33,8 +33,8 @@ app.use(
 
 //cloudinary connection
 
-cloudinaryConnect()
-app.use("/api/v1",userRoutes);
+// cloudinaryConnect()
+// app.use("/api/v1",userRoutes);
 
 app.listen(PORT,()=>{
     console.log(`app is running at ${PORT}`)
