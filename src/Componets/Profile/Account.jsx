@@ -16,25 +16,25 @@ import { useNavigate } from 'react-router-dom';
             <div className='w-[50%] md:px-20 py-10 flex flex-col  gap-6'>
                <div className='flex justify-between flex-col md:flex-row'>
                <h1 className='font-bold text-xl'>Name</h1>
-               <div className='capitalize  bg-gray-600 w-[200px] text-white font-bold px-2 rounded '>
+               <div className='capitalize  bg-gray-600 w-[250px] text-white font-bold px-2 rounded '>
                 {user.Name}
                </div>
                </div>
                <div className='flex justify-between flex-col md:flex-row'>
                <h1 className='font-bold text-xl'>Email ID</h1>
-               <div className='capitalize  bg-gray-600 w-[200px] text-white font-bold px-2 rounded '>
+               <div className='capitalize  bg-gray-600 w-[250px] text-white font-bold px-2 rounded '>
                 {user.Email}
                </div>
                </div>
                <div className='flex justify-between flex-col md:flex-row'>
                <h1 className='font-bold text-xl'>Mobile no.</h1>
-               <div className='capitalize  bg-gray-600 w-[200px] text-white font-bold px-2 rounded '>
+               <div className='capitalize  bg-gray-600 w-[250px] text-white font-bold px-2 rounded '>
                 {user.PhoneNumber}
                </div>
                </div>
                <div className='flex justify-between flex-col md:flex-row'>
                <h1 className='font-bold text-xl'>Dmate account</h1>
-               <div className='capitalize  bg-gray-600 w-[200px] text-white font-bold px-2 rounded '>
+               <div className='capitalize  bg-gray-600 w-[250px] text-white font-bold px-2 rounded '>
                 {user?.status=="Complete" ? <span className='text-green-500'>Complete</span>:<span className='text-red-500'>Not yet</span>}
                </div>
                </div>
