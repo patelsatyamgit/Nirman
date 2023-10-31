@@ -47,7 +47,7 @@ const Reffer = () => {
         <h1 className='font-bold text-2xl text-red-400'> Reffer Information</h1>
         <p className='text-xl font-mono'>Reffer && Earn <span className='text-green-600 font-bold'>999<sup>+</sup></span></p>
 
-        <div  className='flex justify-between px-6'>
+        <div  className='flex justify-between px-6 flex-wrap'>
            <div className='flex gap-5 mt-3'>
            <button onClick={()=>{
                 settab(1);
