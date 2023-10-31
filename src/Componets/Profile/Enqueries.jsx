@@ -68,7 +68,7 @@ const Enqueries = () => {
   return (
     <div className='md:px-10 pt-8'>
         <h1 className='font-bold text-2xl'>Enqueries</h1>
-        <div className='flex gap-5 mt-3'>
+        <div className='flex gap-5 mt-3 flex-wrap'>
             <button onClick={()=>{
                 settab(1);
             }} className={`${tab==1?"bg-gray-700":"bg-gray-500"} text-white font-bold px-4 rounded-lg py-1`}>ALL</button>
