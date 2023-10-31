@@ -66,8 +66,8 @@ const otpTemplate = (otp) => {
 	
 	<body>
 		<div class="container">
-			<a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLOJqG6w3IFib_e5m4rw9pxabW0DOQJm3MKd3nNzw7ew&s"><img class="logo"
-					src="https://i.ibb.co/7Xyj3PC/logo.png" alt="Nirman Logo"></a>
+			<a href="https://nirman-sandy.vercel.app"><img class="logo"
+					src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLOJqG6w3IFib_e5m4rw9pxabW0DOQJm3MKd3nNzw7ew&s" alt="Nirman Logo"></a>
 			<div class="message">OTP Verification Email</div>
 			<div class="body">
 				<p>Dear User,</p>
