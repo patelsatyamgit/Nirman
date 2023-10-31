@@ -43,7 +43,7 @@ const Reffer = () => {
             }
     },[,tab,full,half])
   return (
-    <div className='px-10 py-10'>
+    <div className='md:px-10 py-10'>
         <h1 className='font-bold text-2xl text-red-400'> Reffer Information</h1>
         <p className='text-xl font-mono'>Reffer && Earn <span className='text-green-600 font-bold'>999<sup>+</sup></span></p>
 
