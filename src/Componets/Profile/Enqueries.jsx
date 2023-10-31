@@ -66,7 +66,7 @@ const Enqueries = () => {
             }
     },[,tab,unfullFilled,fullfilled])
   return (
-    <div className='px-10 pt-8'>
+    <div className='md:px-10 pt-8'>
         <h1 className='font-bold text-2xl'>Enqueries</h1>
         <div className='flex gap-5 mt-3'>
             <button onClick={()=>{
