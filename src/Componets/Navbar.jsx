@@ -57,7 +57,7 @@ const Navbar = () => {
 
             {
                 token &&  <div className='flex justify-end gap-4'>
-                    <CopyToClipboard text={`http://localhost:3000/signup/${user._id}`}>
+                    <CopyToClipboard text={`https://nirman-sandy.vercel.app/signup/${user._id}`}>
                         <button className='bg-yellow-300 font-bold text-blue-600 px-4 rounded-md hover:bg-yellow-400 relative' onClick={()=>{
                             setCopy(true);
                             toast.success("Refer link copied share it")
