@@ -23,7 +23,7 @@ const Navbar = () => {
             
         </div>
         <div className='flex flex-col gap-4'>
-            <div className=' flex gap-3'>
+            <div className=' md:flex gap-3 hidden'>
                 {
                    offersLink &&  offersLink.map((item,index)=>(
                                <Link to={""} key={index}><div
@@ -33,7 +33,7 @@ const Navbar = () => {
                 }
 
             </div>
-            <div className='flex gap-3'>
+            <div className='md:flex gap-3 hidden'>
                 {
                    Navlink &&  Navlink.map((item,index)=>(
                                 <Link to={""} key={index}>
@@ -45,7 +45,7 @@ const Navbar = () => {
             </div>
             {/* login and singup  */}
             {
-                !token &&  <div className='flex  justify-end gap-5'>
+                !token &&  <div className='flex  justify-end gap-5 flex-col md:flex-row'>
                 <button onClick={()=>{
                     navigate("/login")
                 }}  className='bg-blue-600 rounded-lg  px-3 py-1 text-white'>Login</button>
@@ -56,7 +56,7 @@ const Navbar = () => {
             }
 
             {
-                token &&  <div className='flex justify-end gap-4'>
+                token &&  <div className='flex justify-end gap-4 flex-col md:flex-row'>
                     <CopyToClipboard text={`https://nirman-sandy.vercel.app/signup/${user._id}`}>
                         <button className='bg-yellow-300 font-bold text-blue-600 px-4 rounded-md hover:bg-yellow-400 relative' onClick={()=>{
                             setCopy(true);
