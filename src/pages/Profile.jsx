@@ -10,9 +10,9 @@ const Profile = () => {
     const navigate=useNavigate();
     const {user}=useSelector((state)=>state.auth);
   return (
-    <div className='bg-gray-300 h-[78vh] w-full flex relative'>
+    <div className='bg-gray-300 h-[78vh] w-full flex flex-col md:flex-row relative'>
         {/* sideBar  */}
-        <div className='bg-gray-500 w-[25%] '>
+        <div className='bg-gray-500 md:w-[25%] '>
             <div className=' px-3 py-3 flex gap-3'>
                 <img src={`https://api.dicebear.com/5.x/initials/svg?seed=${user.Name.split(" ")[0]} ${user.Name.split(" ")[1]}`} alt="" className='rounded-full w-[25%]' />
                 <div>
@@ -21,7 +21,7 @@ const Profile = () => {
                     <p>Email Id -{user.Email}</p>
                 </div>
             </div>
-            <div className='w-[80%] h-[1px] bg-black mx-auto'>
+            <div className='md:w-[80%] h-[1px] bg-black mx-auto'>
             </div>
 
             <div className='flex flex-col items-center justify-center mt-6 gap-6 '>
@@ -40,7 +40,7 @@ const Profile = () => {
             </div>
         </div>
         {/* outlet */}
-        <div className='w-[75%]'>
+        <div className='md:w-[75%]'>
             <Outlet/>
         </div>
     </div>
