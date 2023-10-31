@@ -3,7 +3,6 @@ const User = require("../model/User");
 const otpgenerator=require("otp-generator");
 
 const {uploadFile} = require("../utils/CloudinaryUploader");
-const { useId } = require("react");
 
 exports.createDemateAccount= async (req,res)=>{
     try {
