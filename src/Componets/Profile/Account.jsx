@@ -12,40 +12,40 @@ import { useNavigate } from 'react-router-dom';
         <h1 className='text-red-400 font-bold text-xl'>Well Come - <span className='text-red-700 capitalize'>{user.Name}</span></h1>
         <div className='w-full h-[1px] my-2 bg-black'></div>
 
-        <div className='relative flex '>
-            <div className='w-[50%] px-20 py-10 flex flex-col  gap-6'>
-               <div className='flex justify-between'>
+        <div className='relative flex flex-col md:flex-row '>
+            <div className='w-[50%] md:px-20 py-10 flex flex-col  gap-6'>
+               <div className='flex justify-between flex-col md:flex-row'>
                <h1 className='font-bold text-xl'>Name</h1>
                <div className='capitalize  bg-gray-600 w-[200px] text-white font-bold px-2 rounded '>
                 {user.Name}
                </div>
                </div>
-               <div className='flex justify-between'>
+               <div className='flex justify-between flex-col md:flex-row'>
                <h1 className='font-bold text-xl'>Email ID</h1>
                <div className='capitalize  bg-gray-600 w-[200px] text-white font-bold px-2 rounded '>
                 {user.Email}
                </div>
                </div>
-               <div className='flex justify-between'>
+               <div className='flex justify-between flex-col md:flex-row'>
                <h1 className='font-bold text-xl'>Mobile no.</h1>
                <div className='capitalize  bg-gray-600 w-[200px] text-white font-bold px-2 rounded '>
                 {user.PhoneNumber}
                </div>
                </div>
-               <div className='flex justify-between'>
+               <div className='flex justify-between flex-col md:flex-row'>
                <h1 className='font-bold text-xl'>Dmate account</h1>
                <div className='capitalize  bg-gray-600 w-[200px] text-white font-bold px-2 rounded '>
                 {user?.status=="Complete" ? <span className='text-green-500'>Complete</span>:<span className='text-red-500'>Not yet</span>}
                </div>
                </div>
             </div>
-            <div className='w-[50%] py-6'>
+            <div className='md:w-[50%] py-6'>
                 {
                     user?.status=="Complete"? <div>
                           <div className='w-full mt-4'>
                 <h1 className='text-2xl'>Account <span className='text-green-500 text-sm font-bold'>Varified</span></h1>
 
-                <div className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 w-[300px] h-[150px] mt-5 px-6  py-3 relative flex justify-between flex-col'>
+                <div className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 md:w-[300px] md:h-[150px] mt-5 px-6  py-3 relative flex justify-between flex-col'>
 
                 <div className='flex justify-between gap-2'>
                 <div>
