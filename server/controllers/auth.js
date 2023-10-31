@@ -5,9 +5,6 @@ const bcrypt =require("bcrypt");
 const DmateInfo = require("../model/DmateInfo");
 const jwt =require("jsonwebtoken");
 const { default: mongoose } = require("mongoose");
-const { useOutlet } = require("react-router-dom");
-
-
 
 require("dotenv").config();
 
