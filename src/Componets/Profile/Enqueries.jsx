@@ -20,7 +20,6 @@ const Enqueries = () => {
     const dispatch =useDispatch();
     const [countunsolved,setcount]=useState(0);
     const [visible,setvisible]=useState(null);
-    const [newData,setNewData]=useState(null);
     const getEnquerisDetais= async()=>{
         setLoading(true);
         try {
@@ -43,26 +42,19 @@ const Enqueries = () => {
               getEnquerisDetais();
              
     },[])
-    useEffect(()=>{
-           console.log("11111");
-         if(Enqueries.length==0)return;
-           console.log("00000000000000");
+     useEffect(()=>{
+        socket.on("receivedEnqury",(newdata)=>{
+       
+        console.log("-------------------",newdata)
          const temp=[newdata,...Enqueries];
          setEnqueries(temp);
-         const unfullfill=unfullFilled.length!=0 && [newdata, ...unfullFilled];
+         const unfullfill=unfullFilled.length!==0 && [newdata, ...unfullFilled];
          console.log("unful",unfullFilled);
          setunfullFilled(unfullfill);
          setcount(unfullfill.length);
         })
-        
-    },[newData])
-    useEffect(()=>{
-        socket.on("receivedEnqury",(newdata)=>{
-       
-        console.log("-------------------",newdata);
-            setNewData(newdata);
-       
- },[socket])
+ },[socket,Enqueries]);
+  
     const ResolveHandler=async(id)=>{
               try {
                  dispatch(updateQuery({id:id}));
