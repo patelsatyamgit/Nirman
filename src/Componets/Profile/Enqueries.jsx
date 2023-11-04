@@ -6,14 +6,17 @@ import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
 import "../../App.css"
 import { useDispatch } from 'react-redux';
 import toast from 'react-hot-toast';
+import io from "socket.io-client";
+
+const socket=io.connect("http://localhost:4000");
 
 const Enqueries = () => {
     const [tab,settab]=useState(1);
     const [loading,setLoading]=useState(false);
-    const [Enqueries,setEnqueries]=useState(null);
-    const [fullfilled,setfullfilled]=useState(null);
-    const [unfullFilled,setunfullFilled]=useState(null);
-    const [data,setdata]=useState(null);
+    const [Enqueries,setEnqueries]=useState([]);
+    const [fullfilled,setfullfilled]=useState([]);
+    const [unfullFilled,setunfullFilled]=useState([]);
+    const [data,setdata]=useState([]);
     const dispatch =useDispatch();
     const [countunsolved,setcount]=useState(0);
     const [visible,setvisible]=useState(null);
@@ -23,12 +26,13 @@ const Enqueries = () => {
             const result=await getEnqueries();
             setEnqueries(result);
             setdata(result);
-            // console.log("Enquries---",result);
+            console.log("Enquries---",result);
             const fullfill=result.filter((item)=>item.status=="Resolved");
             const unfullfill=result.filter((item)=>item.status!="Resolved");
             setfullfilled(fullfill);
             setcount(unfullfill.length);
             setunfullFilled(unfullfill);
+            console.log(data);
         } catch (error) {
              console.log(error);
         }
@@ -38,6 +42,21 @@ const Enqueries = () => {
               getEnquerisDetais();
              
     },[])
+    useEffect(()=>{
+        socket.on("receivedEnqury",(newdata)=>{
+       
+
+        if(Enqueries.length==0)return;
+
+        console.log("-------------------")
+         const temp=[newdata,...Enqueries];
+         setEnqueries(temp);
+         const unfullfill=unfullFilled.length!=0 && [newdata, ...unfullFilled];
+         console.log("unful",unfullFilled);
+         setunfullFilled(unfullfill);
+         setcount(unfullfill.length);
+        })
+ },[socket])
     const ResolveHandler=async(id)=>{
               try {
                  dispatch(updateQuery({id:id}));
@@ -64,7 +83,7 @@ const Enqueries = () => {
             else{
                 setdata(fullfilled);
             }
-    },[,tab,unfullFilled,fullfilled])
+    },[,tab,Enqueries,unfullFilled,fullfilled])
   return (
     <div className='md:px-10 pt-8'>
         <h1 className='font-bold text-2xl'>Enqueries</h1>
@@ -112,8 +131,8 @@ const Enqueries = () => {
     data && data.map((item,index)=>(
             <Tr className="" key={index}>
             <Td>{item.Name}</Td>
-            <Td>{item.mobileNumber}</Td>
-            <Td>{item.EmailID}</Td>
+            <Td>{item?.mobileNumber || item?.MobileNumber}</Td>
+            <Td>{item?.EmailID || item?.EmailId}</Td>
             <Td className="relative">{item.Enquiry.substring(0,20)}..{item.Enquiry.length >20 && <span className='text-sm text-blue-600 underline cursor-pointer relative' onClick={()=>{
                 setvisible(item._id);
             }} >readmore</span>}

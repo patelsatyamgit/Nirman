@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom"
 import { setLoading, setSignupData } from "../slices/authSlice"
 import { sendOtp } from "../services/operations/auth"
 import { createEnqury } from "../services/operations/enqury"
+import io from "socket.io-client";
 
 
 function EnquryFOrm() {
@@ -46,6 +47,10 @@ function EnquryFOrm() {
     // db interection 
 
     dispatch(createEnqury(Enqurydata))
+
+    const socket = io.connect("http://localhost:4000");
+
+    socket.emit("enqury",Enqurydata)
 
     // Reset
     setFormData({
