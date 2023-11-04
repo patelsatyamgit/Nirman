@@ -46,7 +46,7 @@ const Enqueries = () => {
     useEffect(()=>{
 
          if(Enqueries.length==0)return;
-
+           console.log("00000000000000");
          const temp=[newdata,...Enqueries];
          setEnqueries(temp);
          const unfullfill=unfullFilled.length!=0 && [newdata, ...unfullFilled];
