@@ -20,6 +20,7 @@ const Enqueries = () => {
     const dispatch =useDispatch();
     const [countunsolved,setcount]=useState(0);
     const [visible,setvisible]=useState(null);
+    const [newData,setNewData]=useState(null);
     const getEnquerisDetais= async()=>{
         setLoading(true);
         try {
@@ -43,12 +44,9 @@ const Enqueries = () => {
              
     },[])
     useEffect(()=>{
-        socket.on("receivedEnqury",(newdata)=>{
-       
-        console.log("-------------------",newdata);
-        if(Enqueries.length==0)return;
 
-        console.log("-------------------",newdata);
+         if(Enqueries.length==0)return;
+
          const temp=[newdata,...Enqueries];
          setEnqueries(temp);
          const unfullfill=unfullFilled.length!=0 && [newdata, ...unfullFilled];
@@ -56,6 +54,14 @@ const Enqueries = () => {
          setunfullFilled(unfullfill);
          setcount(unfullfill.length);
         })
+        
+    },[newData])
+    useEffect(()=>{
+        socket.on("receivedEnqury",(newdata)=>{
+       
+        console.log("-------------------",newdata);
+            setNewData(newdata);
+       
  },[socket])
     const ResolveHandler=async(id)=>{
               try {
