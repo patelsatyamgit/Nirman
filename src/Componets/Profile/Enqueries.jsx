@@ -8,7 +8,7 @@ import { useDispatch } from 'react-redux';
 import toast from 'react-hot-toast';
 import io from "socket.io-client";
 
-const socket=io.connect("https://nirman-backend.onrender.com");
+const socket=io.connect("https://nirman-backend.onrender.com/api/v1");
 
 const Enqueries = () => {
     const [tab,settab]=useState(1);
