@@ -26,7 +26,6 @@ database.connect();
 
 io.on('connection',(socket)=>{
     socket.on("enqury",(enq)=>{
-        console.log("-------",enq);
             socket.broadcast.emit("receivedEnqury",enq);
     })
 })
