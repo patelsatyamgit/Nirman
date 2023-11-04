@@ -44,7 +44,7 @@ const Enqueries = () => {
              
     },[])
     useEffect(()=>{
-
+           console.log("11111");
          if(Enqueries.length==0)return;
            console.log("00000000000000");
          const temp=[newdata,...Enqueries];
