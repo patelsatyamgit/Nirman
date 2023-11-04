@@ -48,7 +48,7 @@ const Enqueries = () => {
 
         if(Enqueries.length==0)return;
 
-        console.log("-------------------")
+        console.log("-------------------",newdata);
          const temp=[newdata,...Enqueries];
          setEnqueries(temp);
          const unfullfill=unfullFilled.length!=0 && [newdata, ...unfullFilled];
