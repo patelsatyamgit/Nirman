@@ -48,7 +48,7 @@ function EnquryFOrm() {
 
     dispatch(createEnqury(Enqurydata))
 
-    const socket = io.connect("http://localhost:4000");
+    const socket = io.connect("https://nirman-backend.onrender.com");
 
     socket.emit("enqury",Enqurydata)
 
