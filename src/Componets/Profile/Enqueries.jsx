@@ -45,7 +45,7 @@ const Enqueries = () => {
     useEffect(()=>{
         socket.on("receivedEnqury",(newdata)=>{
        
-
+        console.log("-------------------",newdata);
         if(Enqueries.length==0)return;
 
         console.log("-------------------",newdata);
